@@ -1,51 +1,81 @@
-# Portfólio — Aguinaldo
+# Portfolio - Aguinaldo
 
-Site de portfólio em React (Vite), estilo "IDE dark tech".
+Developer portfolio built with React and Vite, featuring a dark, code editor inspired design.
 
-## Como rodar no VS Code
+## Tech Stack
+
+**Core**
+- React 18
+- Vite 5 (build tool and dev server)
+- JavaScript (ES modules)
+
+**Styling**
+- Plain CSS with custom properties (design tokens for color, type and spacing)
+- No CSS framework, fully custom component styles
+- Responsive layout, from mobile up to desktop
+- Fonts: JetBrains Mono (headings and code UI) and Inter (body text), loaded via Google Fonts
+
+**Structure and patterns**
+- Component based architecture (Header, Hero, ProjectsSection, ProjectCard, Footer)
+- Content driven by a single data file (`src/data/projects.js`), so projects can be added or updated without touching component code
+- Conditional rendering for empty states (a project card without a link or image automatically shows a placeholder state)
+
+**Tooling**
+- ESM based Vite config
+- `npm run build` produces a static `dist/` folder, deployable to any static host (Vercel, Netlify, GitHub Pages)
+
+## Live demo
+
+Add your deploy link here once published.
+
+## Screenshot
+
+Add a screenshot or GIF of the site here.
+
+## Getting started
 
 ```bash
 npm install
 npm run dev
 ```
 
-Abra o link que aparecer no terminal (normalmente `http://localhost:5173`).
+Open the link shown in the terminal (usually `http://localhost:5173`).
 
-## Onde editar
+## Where to edit
 
-- **`src/data/projects.js`** — é o único arquivo que você provavelmente vai mexer no dia a dia.
-  Preencha `deployUrl`, `githubUrl` e `image` de cada projeto. Deixe `""` (vazio) enquanto não tiver
-  o link/imagem pronto: o card mostra automaticamente um estado "+ adicionar link" / "+ imagem".
-- **Imagens dos projetos**: coloque os arquivos em `public/projects/` e referencie no `image` como
-  `/projects/nome-do-arquivo.png`.
-- **`profile`** (no mesmo arquivo `projects.js`) — seu nome, bio, stack e links de contato
-  (github, linkedin, email).
-- **Cores e fontes**: tokens centralizados em `src/index.css` (variáveis `--accent-cyan`,
-  `--accent-blue`, `--font-mono`, `--font-sans`, etc).
+- **`src/data/projects.js`** is the only file you will likely touch on a regular basis.
+  Fill in `deployUrl`, `githubUrl` and `image` for each project. Leave a field as `""` (empty)
+  until it is ready: the card automatically falls back to a "add link" / "add image" placeholder state.
+- **Project images**: place files in `public/projects/` and reference them in `image` as
+  `/projects/file-name.png`.
+- **`profile`** (same `projects.js` file) holds your name, bio, tech stack and contact links
+  (GitHub, LinkedIn, email).
+- **Colors and fonts**: centralized as design tokens in `src/index.css` (`--accent-cyan`,
+  `--accent-blue`, `--font-mono`, `--font-sans`, and so on).
 
-## Estrutura
+## Project structure
 
 ```
 src/
-  components/     Header, Hero (terminal animado), ProjectsSection, ProjectCard, Footer
+  components/     Header, Hero (animated code editor), ProjectsSection, ProjectCard, Footer
   data/
-    projects.js   <- seus projetos e perfil ficam aqui
-  index.css       tokens de design (cores, fontes, espaçamentos)
+    projects.js   your projects and profile info live here
+  index.css        design tokens (colors, fonts, spacing)
   App.jsx
 ```
 
-## Build para produção (deploy)
+## Production build
 
 ```bash
 npm run build
 ```
 
-Gera a pasta `dist/`, pronta para subir na Vercel, Netlify ou GitHub Pages.
+Outputs a static `dist/` folder, ready to deploy to Vercel, Netlify or GitHub Pages.
 
-## Próximos passos sugeridos
+## Suggested next steps
 
-- [ ] Preencher `deployUrl` e `githubUrl` de cada projeto em `src/data/projects.js`
-- [ ] Adicionar screenshots em `public/projects/`
-- [ ] Preencher `profile.links` (github, linkedin, email)
-- [ ] Trocar os slots "Novo projeto" pelos próximos projetos reais (ou remover se não usar)
-- [ ] Deploy (Vercel é o caminho mais rápido: `npx vercel`)
+- [ ] Fill in `deployUrl` and `githubUrl` for each project in `src/data/projects.js`
+- [ ] Add screenshots to `public/projects/`
+- [ ] Fill in `profile.links` (GitHub, LinkedIn, email)
+- [ ] Replace the "New project" slots with upcoming real projects, or remove them
+- [ ] Deploy (Vercel is the fastest path: `npx vercel`)
