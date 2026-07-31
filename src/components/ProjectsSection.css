@@ -1,0 +1,48 @@
+.projects {
+  padding: 40px 0 100px;
+}
+
+.projects__title {
+  font-size: clamp(1.5rem, 3vw, 1.9rem);
+  margin-top: 8px;
+  margin-bottom: 48px;
+}
+
+.projects__group {
+  margin-bottom: 44px;
+  scroll-margin-top: 84px;
+}
+
+.projects__folder-tab {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border-line);
+  margin-bottom: 24px;
+}
+
+.projects__folder-icon {
+  color: var(--accent-cyan);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+}
+
+.projects__folder-name {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--text-primary);
+}
+
+.projects__folder-desc {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  color: var(--text-faint);
+}
+
+.projects__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 20px;
+}
