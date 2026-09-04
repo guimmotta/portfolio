@@ -1,5 +1,5 @@
 :root {
-  /* Paleta - "workspace" dark tech */
+  /* Paleta - "workspace" dark tech (tema padrão) */
   --bg-void: #0b0f17;
   --bg-panel: #121826;
   --bg-panel-raised: #161f31;
@@ -15,12 +15,42 @@
   --accent-amber: #fbbf24;
   --accent-rose: #fb7185;
 
+  --page-glow-cyan: rgba(94, 234, 212, 0.06);
+  --page-glow-blue: rgba(96, 165, 250, 0.07);
+  --selection-bg: rgba(94, 234, 212, 0.25);
+  --header-bg: rgba(11, 15, 23, 0.75);
+  --overlay-bg: rgba(11, 15, 23, 0.75);
+
   --font-mono: "JetBrains Mono", "Fira Code", Consolas, monospace;
   --font-sans: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
 
   --radius-sm: 4px;
   --radius-md: 8px;
   --max-width: 1120px;
+}
+
+/* Paleta - tema claro */
+:root[data-theme="light"] {
+  --bg-void: #f4f6fb;
+  --bg-panel: #ffffff;
+  --bg-panel-raised: #eef1f8;
+  --border-line: #d7deeb;
+  --border-line-soft: #e4e9f2;
+
+  --text-primary: #161d2b;
+  --text-muted: #4d5872;
+  --text-faint: #8892a8;
+
+  --accent-cyan: #0f9f8f;
+  --accent-blue: #2563eb;
+  --accent-amber: #b45309;
+  --accent-rose: #e11d48;
+
+  --page-glow-cyan: rgba(15, 159, 143, 0.08);
+  --page-glow-blue: rgba(37, 99, 235, 0.08);
+  --selection-bg: rgba(15, 159, 143, 0.18);
+  --header-bg: rgba(244, 246, 251, 0.8);
+  --overlay-bg: rgba(255, 255, 255, 0.82);
 }
 
 * {
@@ -48,12 +78,13 @@ body {
   margin: 0;
   background-color: var(--bg-void);
   background-image:
-    radial-gradient(circle at 15% 0%, rgba(94, 234, 212, 0.06), transparent 40%),
-    radial-gradient(circle at 85% 20%, rgba(96, 165, 250, 0.07), transparent 45%);
+    radial-gradient(circle at 15% 0%, var(--page-glow-cyan), transparent 40%),
+    radial-gradient(circle at 85% 20%, var(--page-glow-blue), transparent 45%);
   color: var(--text-primary);
   font-family: var(--font-sans);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 h1, h2, h3, h4 {
@@ -80,7 +111,7 @@ img {
 }
 
 ::selection {
-  background: rgba(94, 234, 212, 0.25);
+  background: var(--selection-bg);
   color: var(--text-primary);
 }
 

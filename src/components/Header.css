@@ -3,8 +3,9 @@
   top: 0;
   z-index: 50;
   backdrop-filter: blur(10px);
-  background: rgba(11, 15, 23, 0.75);
+  background: var(--header-bg);
   border-bottom: 1px solid var(--border-line-soft);
+  transition: background-color 0.2s ease, border-color 0.2s ease;
 }
 
 .header__inner {
@@ -66,5 +67,109 @@
 @media (max-width: 640px) {
   .header__nav-item:not(.header__nav-item--cta) {
     display: none;
+  }
+}
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-left: 6px;
+  padding: 7px 10px;
+  border: 1px solid var(--border-line);
+  border-radius: 999px;
+  background: var(--bg-panel);
+  color: var(--text-muted);
+  cursor: pointer;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  transition:
+    color 0.15s ease,
+    background 0.15s ease,
+    border-color 0.15s ease,
+    transform 0.15s ease;
+}
+
+.theme-toggle:hover {
+  color: var(--text-primary);
+  border-color: var(--accent-blue);
+  transform: translateY(-1px);
+}
+
+.theme-toggle__icon {
+  color: var(--accent-amber);
+  font-size: 0.95rem;
+  line-height: 1;
+}
+
+.theme-toggle__label {
+  text-transform: lowercase;
+}
+
+@media (max-width: 760px) {
+  .theme-toggle__label {
+    display: none;
+  }
+
+  .theme-toggle {
+    padding: 8px 9px;
+  }
+}
+
+@media (max-width: 640px) {
+  .theme-toggle {
+    margin-left: 4px;
+  }
+}
+
+.lang-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-left: 6px;
+  padding: 7px 10px;
+  border: 1px solid var(--border-line);
+  border-radius: 999px;
+  background: var(--bg-panel);
+  color: var(--text-muted);
+  cursor: pointer;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  transition:
+    color 0.15s ease,
+    background 0.15s ease,
+    border-color 0.15s ease,
+    transform 0.15s ease;
+}
+
+.lang-toggle:hover {
+  color: var(--text-primary);
+  border-color: var(--accent-blue);
+  transform: translateY(-1px);
+}
+
+.lang-toggle__flag {
+  font-size: 0.95rem;
+  line-height: 1;
+}
+
+.lang-toggle__label {
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+@media (max-width: 760px) {
+  .lang-toggle__label {
+    display: none;
+  }
+
+  .lang-toggle {
+    padding: 8px 9px;
+  }
+}
+
+@media (max-width: 640px) {
+  .lang-toggle {
+    margin-left: 4px;
   }
 }

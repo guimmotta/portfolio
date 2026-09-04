@@ -1,43 +1,45 @@
 import { useEffect, useState } from 'react'
+import { useLanguage } from '../i18n/LanguageContext'
 import './Hero.css'
 
-const CODE_LINES = [
-  { indent: 0, text: 'public class Aguinaldo extends Developer {' },
-  { indent: 1, text: 'String role = "Full Stack Java Developer em formação";' },
-  { indent: 1, text: 'String[] stack = { "Java", "Spring Boot", "React", "SQL" };' },
-  { indent: 1, text: 'boolean disponivel = true;' },
-  { indent: 0, text: '}' },
-]
-
 export default function Hero({ profile }) {
+  const { t } = useLanguage()
+  const codeLines = t.hero.codeLines
+
   const [visibleLines, setVisibleLines] = useState(0)
   const [charsInLine, setCharsInLine] = useState(0)
 
+  // Reinicia a animação de digitação quando o idioma muda
   useEffect(() => {
-    if (visibleLines >= CODE_LINES.length) return
-    const currentLine = CODE_LINES[visibleLines].text
+    setVisibleLines(0)
+    setCharsInLine(0)
+  }, [codeLines])
+
+  useEffect(() => {
+    if (visibleLines >= codeLines.length) return
+    const currentLine = codeLines[visibleLines].text
     if (charsInLine < currentLine.length) {
-      const t = setTimeout(() => setCharsInLine((c) => c + 1), 14)
-      return () => clearTimeout(t)
+      const timer = setTimeout(() => setCharsInLine((c) => c + 1), 14)
+      return () => clearTimeout(timer)
     }
-    const t = setTimeout(() => {
+    const timer = setTimeout(() => {
       setVisibleLines((v) => v + 1)
       setCharsInLine(0)
     }, 220)
-    return () => clearTimeout(t)
-  }, [charsInLine, visibleLines])
+    return () => clearTimeout(timer)
+  }, [charsInLine, visibleLines, codeLines])
 
-  const done = visibleLines >= CODE_LINES.length
+  const done = visibleLines >= codeLines.length
 
   return (
     <section id="top" className="hero">
       <div className="container hero__inner">
         <div className="hero__intro">
-          <p className="eyebrow">// portfólio</p>
+          <p className="eyebrow">{t.hero.eyebrow}</p>
           <h1 className="hero__title">
-            Olá, eu sou <span className="hero__title-accent">{profile.name}</span>
+            {t.hero.greeting} <span className="hero__title-accent">{profile.name}</span>
           </h1>
-          <p className="hero__subtitle">{profile.bio}</p>
+          <p className="hero__subtitle">{t.profile.bio}</p>
 
           <div className="hero__tags">
             {profile.stack.map((tech) => (
@@ -49,7 +51,7 @@ export default function Hero({ profile }) {
 
           <div className="hero__actions">
             <a className="hero__btn hero__btn--primary" href="#projetos">
-              ver projetos
+              {t.hero.viewProjects}
             </a>
             <a
               className="hero__btn hero__btn--ghost"
@@ -57,7 +59,7 @@ export default function Hero({ profile }) {
               target={profile.links.linkedin ? '_blank' : undefined}
               rel="noreferrer"
             >
-              linkedin ↗
+              {t.hero.linkedin}
             </a>
           </div>
         </div>
@@ -68,7 +70,7 @@ export default function Hero({ profile }) {
             <span className="hero__editor-tab">README.md</span>
           </div>
           <div className="hero__editor-body">
-            {CODE_LINES.map((line, i) => {
+            {codeLines.map((line, i) => {
               const isVisible = i < visibleLines || (i === visibleLines && charsInLine > 0)
               const text = i < visibleLines ? line.text : i === visibleLines ? line.text.slice(0, charsInLine) : ''
               return (

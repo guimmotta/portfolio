@@ -1,21 +1,25 @@
+import { useLanguage } from '../i18n/LanguageContext'
 import './ProjectCard.css'
 
 export default function ProjectCard({ project }) {
-  const { title, description, stack, status, deployUrl, githubUrl, image, isPlaceholder } = project
+  const { t } = useLanguage()
+  const { id, stack, status, deployUrl, githubUrl, image, isPlaceholder } = project
+  const itemText = t.projects.items[id] ?? { title: id, description: '' }
+  const { title, description } = itemText
 
   return (
     <article className={`card ${isPlaceholder ? 'card--placeholder' : ''}`}>
       <div className="card__media">
         {image ? (
-          <img src={image} alt={`Captura de tela do projeto ${title}`} />
+          <img src={image} alt={t.projects.screenshotAlt(title)} />
         ) : (
           <div className="card__media-empty">
-            <span>+ imagem</span>
-            <span className="card__media-hint">/public/projects/</span>
+            <span>{t.projects.addImage}</span>
+            <span className="card__media-hint">{t.projects.imageHint}</span>
           </div>
         )}
         <span className={`card__status card__status--${status}`}>
-          {status === 'em-andamento' ? 'em andamento' : 'concluído'}
+          {status === 'em-andamento' ? t.projects.statusInProgress : t.projects.statusDone}
         </span>
       </div>
 
@@ -34,17 +38,31 @@ export default function ProjectCard({ project }) {
         )}
 
         <div className="card__links">
-          <CardLink href={deployUrl} label="deploy" filledLabel="ver deploy ↗" />
-          <CardLink href={githubUrl} label="github" filledLabel="ver código ↗" />
+          <CardLink
+            href={deployUrl}
+            label={t.projects.deployLabel}
+            filledLabel={t.projects.viewDeploy}
+            addPrefix={t.projects.addLinkPrefix}
+          />
+          <CardLink
+            href={githubUrl}
+            label={t.projects.githubLabel}
+            filledLabel={t.projects.viewCode}
+            addPrefix={t.projects.addLinkPrefix}
+          />
         </div>
       </div>
     </article>
   )
 }
 
-function CardLink({ href, label, filledLabel }) {
+function CardLink({ href, label, filledLabel, addPrefix }) {
   if (!href) {
-    return <span className="card__link card__link--empty">+ adicionar {label}</span>
+    return (
+      <span className="card__link card__link--empty">
+        {addPrefix} {label}
+      </span>
+    )
   }
   return (
     <a className="card__link card__link--filled" href={href} target="_blank" rel="noreferrer">
