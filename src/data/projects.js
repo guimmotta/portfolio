@@ -31,7 +31,7 @@ export const projects = [
     status: 'concluido', // 'concluido' | 'em-andamento'
     deployUrl: 'https://efood-p4-sable.vercel.app',
     githubUrl: 'https://github.com/guimmotta/efood',
-    image: '../../public/projects/efood.png',
+    image: '/projects/efood.png',
   },
   {
     id: 'biolink',
@@ -40,7 +40,7 @@ export const projects = [
     status: 'concluido',
     deployUrl: 'https://biolink-chi-six.vercel.app/',
     githubUrl: 'https://github.com/guimmotta/biolink',
-    image: '../../public/projects/biolink.png',
+    image: '/projects/biolink.png',
   },
   {
     id: 'portfolio',
@@ -49,7 +49,7 @@ export const projects = [
     status: 'em-andamento',
     deployUrl: 'https://portfolio-green-seven-71.vercel.app/',
     githubUrl: 'https://github.com/guimmotta/portfolio',
-    image: '../../public/projects/portfolio.png',
+    image: '/projects/portfolio.png',
   },
 
   // ---------------------------------------------------------------------
@@ -62,7 +62,7 @@ export const projects = [
     status: 'concluido',
     deployUrl: '',
     githubUrl: 'https://github.com/guimmotta/guimmotta-backend_project2',
-    image: '../../public/projects/dao-service.png',
+    image: '/projects/dao-service.png',
   },
   {
     id: 'jpa-hibernate-migration',
@@ -71,7 +71,7 @@ export const projects = [
     status: 'concluido',
     deployUrl: '',
     githubUrl: 'https://github.com/guimmotta/BackendProject4',
-    image: '../../public/projects/jpa-hibernate-migration.png',
+    image: '/projects/jpa-hibernate-migration.png',
   },
   {
     id: 'catalogo-produtos',
@@ -80,7 +80,7 @@ export const projects = [
     status: 'em-andamento',
     deployUrl: '',
     githubUrl: 'https://github.com/guimmotta/backendProject3',
-    image: '../../public/projects/catalogo-produtos.png',
+    image: '/projects/catalogo-produtos.png',
   },
   {
     id: 'cadastro-clientes',
@@ -89,7 +89,7 @@ export const projects = [
     status: 'concluido',
     deployUrl: '',
     githubUrl: 'https://github.com/guimmotta/CadastroClienteSwing',
-    image: '../../public/projects/cadastro-clientes.png',
+    image: '/projects/cadastro-clientes.png',
   },
 ]
 
