@@ -48,6 +48,7 @@ export function LanguageProvider({ children }) {
       lang,
       t: translations[lang],
       toggleLanguage,
+      setLanguage: setLang,
     }),
     [lang]
   )

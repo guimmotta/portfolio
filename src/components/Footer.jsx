@@ -13,9 +13,9 @@ export default function Footer({ profile }) {
         </div>
 
         <div className="footer__links">
-          <FooterLink href={profile.links.email ? `mailto:${profile.links.email}` : ''} label={t.footer.email} />
-          <FooterLink href={profile.links.linkedin} label={t.footer.linkedin} />
-          <FooterLink href={profile.links.github} label={t.footer.github} />
+          <FooterLink href={profile.links.email ? `mailto:${profile.links.email}` : 'mailto:aguinaldoammotta@gmail.com'} label={t.footer.email} />
+          <FooterLink href={profile.links.linkedin || 'https://www.linkedin.com/in/guimmotta'} label={t.footer.linkedin} />
+          <FooterLink href={profile.links.github || 'https://github.com/guimmotta'} label={t.footer.github} />
         </div>
       </div>
     </footer>

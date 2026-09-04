@@ -12,7 +12,7 @@ export const translations = {
     meta: {
       title: 'Aguinaldo — Full Stack Java Developer',
       description:
-        'Portfólio de Aguinaldo — Full Stack Java Developer em formação. Projetos de Front-end, Back-end e Java.',
+        'Portfólio de Aguinaldo — Full Stack Java Dveleoper em formação. Projetos de Front-end, Back-end e Java.',
     },
     header: {
       contact: 'contato',
@@ -28,15 +28,16 @@ export const translations = {
       switchToLabel: 'EN',
       switchToFlag: '🇺🇸',
       ariaLabel: 'Switch to English',
+      groupAriaLabel: 'Selecionar idioma',
     },
     profile: {
       role: 'Full Stack Java Developer em formação',
-      bio: 'Formação intensiva em Java com EBAC, professor de inglês para devs e em transição para uma vaga júnior fullstack.',
+      bio: 'Formação intensiva em Java pela EBAC, professor de inglês para devs e em transição para uma vaga júnior fullstack.',
       location: 'Pouso Alegre, MG — Brasil',
     },
     hero: {
       eyebrow: '// portfólio',
-      greeting: 'Olá, eu sou',
+      greeting: 'Olá, sou o',
       viewProjects: 'ver projetos',
       linkedin: 'linkedin ↗',
       codeLines: [
@@ -69,10 +70,6 @@ export const translations = {
           label: 'Backend',
           description: 'APIs, persistência de dados e regras de negócio.',
         },
-        java: {
-          label: 'Java',
-          description: 'Aplicações Java standalone, desktop e Java EE.',
-        },
       },
       items: {
         efood: {
@@ -80,14 +77,14 @@ export const translations = {
           description:
             'Aplicação de delivery de comida com listagem de restaurantes, carrinho e fluxo completo de checkout integrado a uma API.',
         },
-        bussola2026: {
+        biolink: {
           title: 'Bússola 2026',
           description:
             'Landing page freelance para cliente, com layout responsivo e ajustes de UI sob demanda.',
         },
-        'frontend-slot-1': {
-          title: 'Novo projeto',
-          description: 'Descreva aqui o projeto: o problema que resolve e o que você construiu.',
+        portfolio: {
+          title: 'Portfólio',
+          description: 'Meu portfólio pessoal, mostrando meus projetos e habilidades.',
         },
         'dao-service': {
           title: 'Sistema Genérico DAO/Service',
@@ -143,6 +140,7 @@ export const translations = {
       switchToLabel: 'PT',
       switchToFlag: '🇧🇷',
       ariaLabel: 'Mudar para português',
+      groupAriaLabel: 'Select language',
     },
     profile: {
       role: 'Full Stack Java Developer in training',
@@ -184,10 +182,6 @@ export const translations = {
           label: 'Backend',
           description: 'APIs, data persistence, and business logic.',
         },
-        java: {
-          label: 'Java',
-          description: 'Standalone, desktop, and Java EE applications.',
-        },
       },
       items: {
         efood: {
@@ -195,14 +189,14 @@ export const translations = {
           description:
             'Food delivery app with restaurant listing, shopping cart, and a complete checkout flow integrated with an API.',
         },
-        bussola2026: {
+        biolink: {
           title: 'Bússola 2026',
           description:
             'Freelance landing page for a client, with a responsive layout and UI adjustments on demand.',
         },
-        'frontend-slot-1': {
-          title: 'New project',
-          description: 'Describe the project here: the problem it solves and what you built.',
+        portfolio: {
+          title: 'Portfolio',
+          description: 'My personal portfolio, showcasing my projects and skills.',
         },
         'dao-service': {
           title: 'Generic DAO/Service System',
@@ -223,10 +217,6 @@ export const translations = {
           title: 'CadastroClientes',
           description:
             'Java EE application for customer registration and management, with a JSF web layer running on WildFly.',
-        },
-        'java-slot-1': {
-          title: 'New project',
-          description: 'Describe the project here: the problem it solves and what you built.',
         },
       },
     },

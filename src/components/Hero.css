@@ -42,6 +42,15 @@
   border: 1px solid var(--border-line);
   padding: 4px 10px;
   border-radius: 100px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.hero__tag-icon {
+  width: 13px;
+  height: 13px;
+  flex-shrink: 0;
 }
 
 .hero__actions {

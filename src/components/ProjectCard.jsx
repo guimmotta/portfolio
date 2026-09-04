@@ -1,4 +1,5 @@
 import { useLanguage } from '../i18n/LanguageContext'
+import TechIcon from './TechIcon'
 import './ProjectCard.css'
 
 export default function ProjectCard({ project }) {
@@ -31,6 +32,7 @@ export default function ProjectCard({ project }) {
           <div className="card__stack">
             {stack.map((tech) => (
               <span key={tech} className="card__stack-item">
+                <TechIcon name={tech} className="card__stack-icon" />
                 {tech}
               </span>
             ))}

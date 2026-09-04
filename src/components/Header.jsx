@@ -2,8 +2,13 @@ import { categories } from '../data/projects'
 import { useLanguage } from '../i18n/LanguageContext'
 import './Header.css'
 
+const LANGUAGE_OPTIONS = [
+  { code: 'pt', flag: '🇧🇷', label: 'PT' },
+  { code: 'en', flag: '🇺🇸', label: 'EN' },
+]
+
 export default function Header({ profile, theme, onToggleTheme }) {
-  const { t, toggleLanguage } = useLanguage()
+  const { t, lang, setLanguage } = useLanguage()
 
   const scrollTo = (id) => {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' })
@@ -39,18 +44,23 @@ export default function Header({ profile, theme, onToggleTheme }) {
             <span className="theme-toggle__label">{targetThemeLabel}</span>
           </button>
 
-          <button
-            className="lang-toggle"
-            type="button"
-            onClick={toggleLanguage}
-            aria-label={t.language.ariaLabel}
-            title={t.language.ariaLabel}
-          >
-            <span className="lang-toggle__flag" aria-hidden="true">
-              {t.language.switchToFlag}
-            </span>
-            <span className="lang-toggle__label">{t.language.switchToLabel}</span>
-          </button>
+          <div className="lang-switch" role="group" aria-label={t.language.groupAriaLabel}>
+            {LANGUAGE_OPTIONS.map((option) => (
+              <button
+                key={option.code}
+                type="button"
+                className={`lang-switch__btn ${lang === option.code ? 'lang-switch__btn--active' : ''}`}
+                onClick={() => setLanguage(option.code)}
+                aria-pressed={lang === option.code}
+                title={option.label}
+              >
+                <span className="lang-switch__flag" aria-hidden="true">
+                  {option.flag}
+                </span>
+                <span className="lang-switch__label">{option.label}</span>
+              </button>
+            ))}
+          </div>
 
           <a
             className="header__nav-item header__nav-item--cta"

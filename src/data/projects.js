@@ -18,7 +18,6 @@
 export const categories = [
   { id: 'frontend' },
   { id: 'backend' },
-  { id: 'java' },
 ]
 
 export const projects = [
@@ -30,28 +29,27 @@ export const projects = [
     category: 'frontend',
     stack: ['React', 'Styled Components', 'React Router'],
     status: 'concluido', // 'concluido' | 'em-andamento'
-    deployUrl: '',
-    githubUrl: '',
-    image: '',
+    deployUrl: 'https://efood-p4-sable.vercel.app',
+    githubUrl: 'https://github.com/guimmotta/efood',
+    image: '../../public/projects/efood.png',
   },
   {
-    id: 'bussola2026',
+    id: 'biolink',
     category: 'frontend',
     stack: ['React', 'CSS'],
     status: 'concluido',
-    deployUrl: '',
-    githubUrl: '',
-    image: '',
+    deployUrl: 'https://biolink-chi-six.vercel.app/',
+    githubUrl: 'https://github.com/guimmotta/biolink',
+    image: '../../public/projects/biolink.png',
   },
   {
-    id: 'frontend-slot-1',
+    id: 'portfolio',
     category: 'frontend',
-    stack: [],
+    stack: ['React', 'CSS', 'Vite'],
     status: 'em-andamento',
-    deployUrl: '',
-    githubUrl: '',
-    image: '',
-    isPlaceholder: true,
+    deployUrl: 'https://portfolio-green-seven-71.vercel.app/',
+    githubUrl: 'https://github.com/guimmotta/portfolio',
+    image: '../../public/projects/portfolio.png',
   },
 
   // ---------------------------------------------------------------------
@@ -63,8 +61,8 @@ export const projects = [
     stack: ['Java', 'JDBC', 'Design Patterns'],
     status: 'concluido',
     deployUrl: '',
-    githubUrl: '',
-    image: '',
+    githubUrl: 'https://github.com/guimmotta/guimmotta-backend_project2',
+    image: '../../public/projects/dao-service.png',
   },
   {
     id: 'jpa-hibernate-migration',
@@ -72,8 +70,8 @@ export const projects = [
     stack: ['Java', 'JPA', 'Hibernate'],
     status: 'concluido',
     deployUrl: '',
-    githubUrl: '',
-    image: '',
+    githubUrl: 'https://github.com/guimmotta/BackendProject4',
+    image: '../../public/projects/jpa-hibernate-migration.png',
   },
   {
     id: 'catalogo-produtos',
@@ -81,31 +79,17 @@ export const projects = [
     stack: ['Java', 'Spring Boot', 'PostgreSQL'],
     status: 'em-andamento',
     deployUrl: '',
-    githubUrl: '',
-    image: '',
+    githubUrl: 'https://github.com/guimmotta/backendProject3',
+    image: '../../public/projects/catalogo-produtos.png',
   },
-
-  // ---------------------------------------------------------------------
-  // JAVA
-  // ---------------------------------------------------------------------
   {
     id: 'cadastro-clientes',
-    category: 'java',
+    category: 'backend',
     stack: ['Java', 'JSF', 'WildFly'],
     status: 'concluido',
     deployUrl: '',
-    githubUrl: '',
-    image: '',
-  },
-  {
-    id: 'java-slot-1',
-    category: 'java',
-    stack: [],
-    status: 'em-andamento',
-    deployUrl: '',
-    githubUrl: '',
-    image: '',
-    isPlaceholder: true,
+    githubUrl: 'https://github.com/guimmotta/CadastroClienteSwing',
+    image: '../../public/projects/cadastro-clientes.png',
   },
 ]
 

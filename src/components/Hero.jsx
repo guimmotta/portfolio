@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useLanguage } from '../i18n/LanguageContext'
+import TechIcon from './TechIcon'
 import './Hero.css'
 
 export default function Hero({ profile }) {
@@ -44,6 +45,7 @@ export default function Hero({ profile }) {
           <div className="hero__tags">
             {profile.stack.map((tech) => (
               <span key={tech} className="hero__tag">
+                <TechIcon name={tech} className="hero__tag-icon" />
                 {tech}
               </span>
             ))}
@@ -55,7 +57,7 @@ export default function Hero({ profile }) {
             </a>
             <a
               className="hero__btn hero__btn--ghost"
-              href={profile.links.linkedin || '#'}
+              href={profile.links.linkedin || 'https://www.linkedin.com/in/guimmotta'}
               target={profile.links.linkedin ? '_blank' : undefined}
               rel="noreferrer"
             >

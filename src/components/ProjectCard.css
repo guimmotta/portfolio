@@ -104,6 +104,15 @@
   border: 1px solid var(--border-line-soft);
   padding: 3px 8px;
   border-radius: var(--radius-sm);
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.card__stack-icon {
+  width: 11px;
+  height: 11px;
+  flex-shrink: 0;
 }
 
 .card__links {
